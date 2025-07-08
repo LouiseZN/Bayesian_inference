@@ -27,14 +27,14 @@ $$
 
 ---
 
-## 📁 Files
+## 📁 Project Files
 
-| File | Description |
-|------|-------------|
-| `Housing.csv` | Dataset with real housing data |
-| `bayesian_model.R` | Core R script to run the Bayesian regression |
-| `HousePriceBayesian.Rmd` | RMarkdown report with code, plots, and interpretation |
-| `README.md` | Project overview |
+| File                   | Description                                      |
+|------------------------|--------------------------------------------------|
+| `Housing.csv`          | Dataset with housing prices and features         |
+| `bayesian_model.R`     | Main R script to run the Bayesian regression     |
+| `HousePriceBayesian.Rmd` | RMarkdown report with code, plots, and results |
+| `README.md`            | Project description and instructions             |
 
 ---
 
@@ -69,7 +69,7 @@ abline(v = mean(posterior_pred), col = "lightblue", lwd = 2)
 
 # Show 95% credible interval
 posterior_interval(model, newdata = new_house, prob = 0.95)
-```r
+r```
 ---
 
 ## 📊 Results 
