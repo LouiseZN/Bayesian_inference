@@ -49,10 +49,10 @@ $$
 ## 🚀 How to Run
 
 ```r
-# Load dataset
+# Load dataset of the prices of the houses and their sqr fotege 
 house <- read.csv("Housing.csv")
 
-# Load required packages
+# Load rstanarm
 install.packages("rstanarm")
 library(rstanarm)
 
