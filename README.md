@@ -82,22 +82,31 @@ Inferência bayesiana com MCMC (amostragem de Monte Carlo via Cadeias de Markov)
 
 Distribuições a posteriori dos parâmetros, que refletem a incerteza após observar os dados.
 
-Model Info:
- function:     **stan_glm**
+**Model Info:**
+
+- function:     **stan_glm**
+
   -> The model was fitted using the stan_glm() function.
- family:       gaussian [identity]
-  -> The model assumes that the data follow a normal (Gaussian) distribution with an identity link function (i.e., the expected value of price is modeled directly as a linear function of sqft_living)
- formula:      price ~ sqft_living
+- family:       gaussian [identity]
+
+  -> The model assumes that the data follow a normal (Gaussian) distribution with an identity link function (i.e., the expected value of price is modeled directly as a linear function sqft_living)
+- formula:      price ~ sqft_living
+
   -> The model formula: price is predicted based on sqft_living (square footage of the house).
- algorithm:    sampling
+- algorithm:    sampling
+
   -> The model was estimated using MCMC sampling (not approximations such as variational Bayes).
- sample:       4000 (posterior sample size)
+- sample:       4000 (posterior sample size)
+
   -> A total of 4000 posterior samples were drawn (typically the sum across all chains after burn-in).
- priors:       see help('prior_summary')
+- priors:       see help('prior_summary')
+
   -> The priors used are the defaults from the rstanarm package, which are generally weakly informative (e.g., normal(0, 10) for coefficients).
- observations: 21613
+- observations: 21613
+
   -> The number of data points (rows) used to fit the model.
- predictors:   2
+- predictors:   2
+
   -> The model includes two predictors: sqft_living and the intercept (β₀).
 
 The function stan_glm is the Baysian of the function glm(), that represent a generalized vergion of a linar regretion.
