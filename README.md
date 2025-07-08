@@ -69,7 +69,7 @@ abline(v = mean(posterior_pred), col = "lightblue", lwd = 2)
 
 # Show 95% credible interval
 posterior_interval(model, newdata = new_house, prob = 0.95)
-r```
+```
 ---
 
 ## 📊 Results 
