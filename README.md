@@ -16,9 +16,10 @@ Unlike classical regression, Bayesian regression **does not return just one esti
 
 We model the price of a house using:
 
-\[
+$$
 \text{price}_i \sim \mathcal{N}(\beta_0 + \beta_1 \cdot \text{sqft}_i, \sigma^2)
-\]
+$$
+
 
 - The model is fit using **MCMC sampling**
 - Priors are weakly informative (default from `rstanarm`)
