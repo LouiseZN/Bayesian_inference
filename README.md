@@ -108,29 +108,33 @@ price<sub>i</sub> ~ N(β₀ + β₁ × sqft<sub>i</sub>, σ²)
 
 **Estimates:**
 
-              mean     sd       10%      50%      90%   
-(Intercept) -43560.2   4374.4 -49193.5 -43538.5 -37956.5
-sqft_living    280.6      1.9    278.1    280.6    283.1
-sigma       261497.3   1251.5 259869.9 261513.2 263055.7
+| Parameter    | Mean    | SD   | 10%     | 50%     | 90%     |
+| ------------ | ------- | ---- | ------- | ------- | ------- |
+| Intercept    | -43,560 | 4374 | -49,194 | -43,539 | -37,957 |
+| sqft\_living | 280.6   | 1.9  | 278.1   | 280.6   | 283.1   |
+| Sigma (σ)    | 261,497 | 1251 | 259,870 | 261,513 | 263,056 |
 
   -> sqft_living - Quanto o preço da casa aumenta, em média, a cada 1 unidade adicional de área útil.
   -> Sigma - O desvio padrão do erro (variabilidade não explicada pelo modelo).
 
 **sqft_living = 280.6 → Um metro quadrado adicional aumenta o preço em média 280,6 unidades monetárias, com incerteza pequena (sd = 1.9)**
 
-Fit Diagnostics:
-           mean     sd       10%      50%      90%   
-mean_PPD 540076.4   2508.5 536827.4 540117.1 543273.7
+**Fit Diagnostics:**
+
+| Metric    | Mean    | SD   | 10%     | 50%     | 90%     |
+| --------- | ------- | ---- | ------- | ------- | ------- |
+| mean\_PPD | 540,076 | 2508 | 536,827 | 540,117 | 543,274 |
 
   -> mean_PPD - média da distribuição posterior preditiva (Posterior Predictive Distribution) para o preço.
 
 **MCMC diagnostics**
-              mcse Rhat n_eff
-(Intercept)   72.9  1.0 3604  
-sqft_living    0.0  1.0 3749 
-sigma         24.6  1.0 2579 
-mean_PPD      47.1  1.0 2838 
-log-posterior  0.0  1.0 1596
+| Parameter     | MCSE | Rhat | n\_eff |
+| ------------- | ---- | ---- | ------ |
+| Intercept     | 72.9 | 1.00 | 3604   |
+| sqft\_living  | 0.0  | 1.00 | 3749   |
+| Sigma         | 24.6 | 1.00 | 2579   |
+| mean\_PPD     | 47.1 | 1.00 | 2838   |
+| log-posterior | 0.0  | 1.00 | 1596   |
 
   -> mcse - erro padrão causado pela amostragem MCMC
   -> Rhat - Diagnóstico de convergência — deve estar perto de 1.0!
@@ -139,9 +143,8 @@ log-posterior  0.0  1.0 1596
 For each parameter, mcse is Monte Carlo standard error, n_eff is a crude measure of effective sample size, and Rhat is the potential scale reduction factor on split chains (at convergence Rhat=1).
 
 # 📌 Conclusion
-The model indicates a positive and statistically significant linear relationship between the size of the house (sqft_living) and its price. Specifically, the estimated coefficient suggests that, on average, each additional square foot increases the house price by approximately 280.60 units.
-
-However, the residual standard deviation is quite high (~261,500), which implies that a large portion of the variability in house prices is not explained by size alone. This suggests that other factors—such as location, number of rooms, or property condition—likely play an important role and should be considered in future models.
+The estimated coefficient suggests that, on average, each additional square foot increases the house price by approximately 280.60 units.
+However, the residual standard deviation is quite high **(~261,500)**, which implies that a large portion of the variability in house prices is not explained by size alone. This suggests that other factors—such as location, number of rooms, or property condition—likely play an important role and should be considered in future models.
 
 The Bayesian estimation was performed successfully using MCMC, and the diagnostics (e.g., Rhat = 1.0 and high effective sample sizes) indicate strong convergence and reliable posterior estimates.
 
